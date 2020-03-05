@@ -1,0 +1,61 @@
+swagger: "2.0"
+info:
+  description: "Description goes here"
+  version: "Version goes here"
+  title: "Title goes here"
+  contact:
+    email: "some-contact@gmail.com"
+  license:
+    name: "license goes here"
+    url: "https://opensource.org/licenses/MIT"
+host: "mycloudhost"
+basePath: "/v1"
+schemes:
+- "http"
+paths:
+  /some-path/{value}:
+    get:
+      tags:
+      - ""
+      summary: ""
+      description: ""
+      operationId: "getSomething"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "value"
+        in: "path"
+        description: ""
+        required: true
+        type: "number"
+      responses:
+        200:
+          description: "OK"
+          schema:
+            $ref: "#/definitions/SuccessResponse"
+        400:
+          description: "BAD REQUEST"
+          schema:
+            $ref: "#/definitions/FailureResponse"
+definitions:
+  SuccessResponse:
+    type: "object"
+    properties:
+      code:
+        type: "integer"
+        format: "int32"
+      type:
+        type: "string"
+      result:
+        type: "number"
+  FailureResponse:
+    type: "object"
+    properties:
+      code:
+        type: "integer"
+        format: "int32"
+      type:
+        type: "string"
+externalDocs:
+  description: "Find out more about Swagger"
+  url: "http://swagger.io"
