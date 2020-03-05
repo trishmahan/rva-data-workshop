@@ -1,31 +1,31 @@
 swagger: "2.0"
 info:
-  description: "Description goes here"
-  version: "Version goes here"
-  title: "Title goes here"
+  description: "Allows to developers to retrieve calculations from our service using REST methods."
+  version: "1.0.0"
+  title: "Data Engineering Workshop Calculations"
   contact:
     email: "some-contact@gmail.com"
   license:
-    name: "license goes here"
+    name: "MIT license"
     url: "https://opensource.org/licenses/MIT"
 host: "mycloudhost"
 basePath: "/v1"
 schemes:
 - "http"
 paths:
-  /some-path/{value}:
+  /double/{value}:
     get:
       tags:
-      - ""
-      summary: ""
-      description: ""
-      operationId: "getSomething"
+      - "double"
+      summary: "Multiply a number by two"
+      description: "Returns the value multiplied by two"
+      operationId: "getDouble"
       produces:
       - "application/json"
       parameters:
       - name: "value"
         in: "path"
-        description: ""
+        description: "Value we should use for our calculation"
         required: true
         type: "number"
       responses:
