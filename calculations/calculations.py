@@ -10,8 +10,12 @@ def get_double(number):
     :param number: a numeric value passed in the path
     :return: See specification.yaml -- a json with code, type and result where result is 2 times the number
     """
-    result = float(number) * 2
-    response = {"code": "200", "type": "OK", "result": result}
+    try:
+        result = float(number) * 2
+        response = {"code": "200", "type": "OK", "result": result}
+
+    except ValueError:
+        response = {"code": "400", "type": "BAD REQUEST"}
     return jsonify(response)
 
 
