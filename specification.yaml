@@ -1,0 +1,61 @@
+swagger: "2.0"
+info:
+  description: "Allows to developers to retrieve calculations from our service using REST methods."
+  version: "1.0.0"
+  title: "Data Engineering Workshop Calculations"
+  contact:
+    email: "some-contact@gmail.com"
+  license:
+    name: "MIT license"
+    url: "https://opensource.org/licenses/MIT"
+host: "mycloudhost"
+basePath: "/v1"
+schemes:
+- "http"
+paths:
+  /double/{value}:
+    get:
+      tags:
+      - "double"
+      summary: "Multiply a number by two"
+      description: "Returns the value multiplied by two"
+      operationId: "getDouble"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "value"
+        in: "path"
+        description: "Value we should use for our calculation"
+        required: true
+        type: "number"
+      responses:
+        200:
+          description: "OK"
+          schema:
+            $ref: "#/definitions/SuccessResponse"
+        400:
+          description: "BAD REQUEST"
+          schema:
+            $ref: "#/definitions/FailureResponse"
+definitions:
+  SuccessResponse:
+    type: "object"
+    properties:
+      code:
+        type: "integer"
+        format: "int32"
+      type:
+        type: "string"
+      result:
+        type: "number"
+  FailureResponse:
+    type: "object"
+    properties:
+      code:
+        type: "integer"
+        format: "int32"
+      type:
+        type: "string"
+externalDocs:
+  description: "Find out more about Swagger"
+  url: "http://swagger.io"
