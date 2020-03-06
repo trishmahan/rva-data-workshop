@@ -1,4 +1,4 @@
-# Project Title
+# RVA Data Workshop 2020 Intro to Data Engineering
 
 This work was created as part of the RVA Data Summit Workshop 2020 session, "Introduction to Data Engineering."
 
