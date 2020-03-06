@@ -1,8 +1,8 @@
 swagger: "2.0"
 info:
+  title: "Data Engineering Workshop Calculations"
   description: "Allows to developers to retrieve calculations from our service using REST methods."
   version: "1.0.0"
-  title: "Data Engineering Workshop Calculations"
   contact:
     email: "some-contact@gmail.com"
   license:

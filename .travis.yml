@@ -6,4 +6,3 @@ services:
 script:
   - docker build -t rvadatasummit/intro .
   - docker run -d -p 5000:5000 rvadatasummit/intro
-  - docker ps -a
